@@ -1,0 +1,41 @@
+{
+	"name": "ESP-IDF",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"userEnvProbe": "loginInteractiveShell",
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind",
+	"workspaceFolder": "/workspaces",
+
+	"containerEnv": {
+		"IDF_TARGET": "esp32"
+	},
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"idf.pythonBinPath": "/opt/esp/python_env/idf5.2_py3.10_env/bin/python",
+				
+				"idf.adapterTargetName": "esp32",
+				"idf.flashType": "UART",
+				"idf.flashBaudRate": "115200",
+				"idf.monitorBaudRate": "115200",
+				"idf.port": "rfc2217://host.docker.internal:2217?ign_set_control"
+			},
+			"extensions": [
+				"yzhang.markdown-all-in-one",
+				"bierner.markdown-preview-github-styles",
+				"ionutvmi.path-autocomplete",
+				"mhutchie.git-graph",
+				"redjue.git-commit-plugin",
+				"GitHub.vscode-pull-request-github",
+				"Codeium.codeium",
+				"ms-vscode.cpptools",
+				"espressif.esp-idf-extension",
+				"twxs.cmake"
+			]
+		}
+	}
+}
