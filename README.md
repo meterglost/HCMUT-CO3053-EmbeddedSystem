@@ -1,6 +1,6 @@
 # Embedded system course with ESP32
 
-## Programming workspace with VSCode devcontainer
+## Programming workspace
 
 ### Prerequisites
 
@@ -8,54 +8,50 @@
 -   VSCode with devcontainer extension
 -   [ESP RFC server](https://github.com/espressif/esptool/releases/latest)
 
-### Create workspace with devcontainer
+### Workspace
 
-Open `.devcontainer/devcontainer.json` and modify the line
+1.  Open VSCode Command Palette with `Ctrl+Shift+P`
+2.  Select `Dev Containers: Reopen in Container`
+3.  Choose the workspace you want to open
 
-```json
-...
-	"workspaceFolder": "/workspaces",
-...
-```
+## Remote serial port
 
-to match the lab you want to build, for example
+1.  Check which USB port the ESP32 is binded to
 
-```json
-...
-	"workspaceFolder": "/workspaces/lab1",
-...
-```
+    > **NOTE**\
+    > Check on host machine, not inside devcontainer
 
-Then open VSCode Command Palette with `Ctrl+Shift+P` and select `Dev Containers: Rebuild and Reopen in Container`
+    On Ubuntu
 
-### Run RFC server for flashing firmware
+    ```bash
+    ls -la /sys/bus/usb-serial/devices/
+    ```
 
--   First you need to check which "port" the ESP32 is binded to, `/dev/ttyUSB0` for example.
+    On Windows
+    ```powershell
+    Get-CimInstance -Class Win32_SerialPort | Select-Object Name, Description, DeviceID | Format-List
+    ```
 
--   Then run an RFC server to redirect network connection to that "port"
-
-    > [!NOTE]\
-    > Run with superuser privileges
+2.  Run RFC server to redirect network connection to that USB port
 
     ```shell
     sudo ./esp_rfc2217_server /dev/ttyUSB0
     ```
 
--   Now you can connect to the device to flash firmware through `rfc2217://<host_address>:2217?ign_set_control`
+    Now the ESP32 can be connected to flash firmware through network at
 
-### Build/Flash/Monitor
+    ```
+    rfc2217://<host_address>:2217?ign_set_control
+    ```
 
-Workspace has been config so that you can use build/flash/monitor button from esp-idf extension
+    > **NOTE**\
+    > Workspace is pre-configured to use `host.docker.internal` as `<host_address>`, which means connect to ESP32 on the same host machine
 
-#### Build manually
+## Flash firmware
 
-```shell
-idf.py build
-```
+Workspace has been configured so that you can build/flash/monitor the ESP32 using button on VSCode status bar or by calling action in VSCode command pallete.
 
-#### Flash manually
-
-To flash from inside devcontainer, use `host.docker.internal` as `<host_address>`
+Manually, you can use this command to flash your ESP32
 
 ```shell
 idf.py -p rfc2217://host.docker.internal:2217?ign_set_control flash
