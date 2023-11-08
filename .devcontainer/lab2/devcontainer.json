@@ -1,7 +1,7 @@
 {
 	"name": "Lab 2",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "../Dockerfile"
 	},
 	"userEnvProbe": "loginInteractiveShell",
 
@@ -17,7 +17,7 @@
 			"settings": {
 				"terminal.integrated.defaultProfile.linux": "bash",
 				"idf.pythonBinPath": "${{env:IDF_PYTHON_ENV_PATH}/bin/python",
-				
+
 				"idf.adapterTargetName": "esp32",
 				"idf.flashType": "UART",
 				"idf.flashBaudRate": "115200",
