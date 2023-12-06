@@ -14,6 +14,12 @@
 2.  Select `Dev Containers: Reopen in Container`
 3.  Choose the workspace you want to open
 
+### Workspace config
+
+1.  Open VSCode Command Palette with `Ctrl+Shift+P`
+2.  Select `ESP-IDF: Add vscode configuration folder`
+3.  In `.vscode/c_cpp_properties.json`, `includePath` and `path` property, add `"${workspaceFolder}/build/config"`
+
 ## Remote serial port
 
 1.  Check which USB port the ESP32 is binded to
@@ -29,7 +35,7 @@
 
     On Windows
     ```powershell
-    Get-CimInstance -Class Win32_SerialPort | Select-Object Name, Description, DeviceID | Format-List
+    Get-PnpDevice -PresentOnly -Class Ports | Select-Object Name, Description, DeviceID | Format-List
     ```
 
 2.  Run RFC server to redirect network connection to that USB port
