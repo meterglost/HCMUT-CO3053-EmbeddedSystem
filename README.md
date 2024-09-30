@@ -13,3 +13,10 @@ Check [contributing guides](CONTRIBUTING.md) for more details.
 -   Introduction to ESP32, FreeRTOS, and ESP-IDF
 -   Setup toolchain and dev environment
 -   Build and flash given sample code
+
+## [Lab 2](lab2)
+
+-   Learn about ESP32 GPIO and FreeeRTOS task
+-   Write a sample program that has 2 tasks:
+    -   One polling task which will run every second
+    -   One event based task which will run on GPIO

@@ -4,6 +4,10 @@
 			"name": "Lab 1",
 			"path": "../lab1/"
 		},
+		{
+			"name": "Lab 2",
+			"path": "../lab2/"
+		},
 	],
 
 	"settings": {
