@@ -1,0 +1,8 @@
+*           text eol=lf
+
+*.pdf       binary
+
+docs/                   linguist-documentation
+
+sdkconfig.default       linguist-language=Dotenv
+sdkconfig.default.*     linguist-language=Dotenv

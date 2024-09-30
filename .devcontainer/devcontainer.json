@@ -1,0 +1,49 @@
+{
+	"name": "ESP-IDF",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"remoteEnv": {
+		"ESPPORT": "rfc2217://host.docker.internal:2217?ign_set_control",
+		"ESPBAUD": "115200"
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"twxs.cmake",
+				"esbenp.prettier-vscode"
+			],
+			"settings": {
+				"files.associations": {
+					"*.c": "c",
+					"*.h": "c",
+					"*.cpp": "cpp",
+					"*.hpp": "cpp",
+
+					"sdkconfig": "properties",
+					"sdkconfig.old": "properties",
+					"sdkconfig.defaults": "properties",
+					"sdkconfig.defaults.*": "properties"
+				},
+
+				"C_Cpp.intelliSenseEngine": "disabled",
+				"C_Cpp.default.compilerPath": "${containerEnv:GCC_PATH}",
+
+				"prettier.requireConfig": true,
+
+				"[c][cpp]": {
+					"editor.defaultFormatter": "ms-vscode.cpptools",
+					"editor.formatOnSave": true
+				},
+
+				"[markdown][yaml][json][jsonc]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode",
+					"editor.formatOnSave": true
+				}
+			}
+		}
+	}
+}

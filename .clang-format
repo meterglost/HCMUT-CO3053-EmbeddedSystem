@@ -1,0 +1,54 @@
+# clang-format configuration file. Intended for clang-format >= 11.
+#
+# For more information, see:
+#
+#   https://clang.llvm.org/docs/ClangFormat.html
+#   https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+#
+---
+Language: Cpp
+BasedOnStyle: LLVM
+
+UseTab: ForContinuationAndIndentation
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+
+ColumnLimit: 0
+LineEnding: LF
+
+AlignAfterOpenBracket: BlockIndent
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignTrailingComments: Always
+
+AllowShortBlocksOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortFunctionsOnASingleLine: None
+
+BreakBeforeBraces: Allman
+Cpp11BracedListStyle: false
+
+AccessModifierOffset: -4
+IndentAccessModifiers: false
+IndentCaseLabels: false
+
+CompactNamespaces: false
+FixNamespaceComments: false
+NamespaceIndentation: All
+
+IndentPPDirectives: BeforeHash
+PPIndentWidth: 4
+
+BinPackArguments: false
+PackConstructorInitializersStyle: CurrentLine
+
+IncludeBlocks: Preserve
+SeparateDefinitionBlocks: Always
+
+InsertNewlineAtEOF: true
+InsertTrailingCommas: Wrapped
+
+MaxEmptyLinesToKeep: 1
+EmptyLineBeforeAccessModifier: Always
