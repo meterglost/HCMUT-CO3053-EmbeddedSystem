@@ -32,3 +32,9 @@ Check [contributing guides](CONTRIBUTING.md) for more details.
 >
 > -   All the instructions in document are from Vanilla FreeRTOS and only able to apply on Vanilla FreeRTOS.
 > -   ESP-IDF, although based on FreeRTOS, has heavily modified it to support dual-core. And developers are not able to config its scheduling algorithm.
+
+## [Lab 4](lab4)
+
+-   Characteristics of queueing system
+-   FreeRTOS queue management
+-   Write a sample program using a queue with 1 source and 2 sinks
