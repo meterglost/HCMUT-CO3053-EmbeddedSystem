@@ -38,3 +38,9 @@ Check [contributing guides](CONTRIBUTING.md) for more details.
 -   Characteristics of queueing system
 -   FreeRTOS queue management
 -   Write a sample program using a queue with 1 source and 2 sinks
+
+## [Lab 5](lab5)
+
+-   FreeRTOS software timer
+-   Software timer types, states, and behaviors
+-   Write a sample program using 2 software timers sharing 1 callback function
