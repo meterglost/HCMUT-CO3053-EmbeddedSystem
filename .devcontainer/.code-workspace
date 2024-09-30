@@ -8,6 +8,10 @@
 			"name": "Lab 2",
 			"path": "../lab2/"
 		},
+		{
+			"name": "Lab 3",
+			"path": "../lab3/"
+		},
 	],
 
 	"settings": {

@@ -20,3 +20,15 @@ Check [contributing guides](CONTRIBUTING.md) for more details.
 -   Write a sample program that has 2 tasks:
     -   One polling task which will run every second
     -   One event based task which will run on GPIO
+
+## [Lab 3](lab3)
+
+-   FreeRTOS idle task
+-   FreeRTOS task scheduling algorithms
+-   Write sample programs for each scheduling algorithm
+
+> [!IMPORTANT]
+> Don't try to finish this lab as it is wrongly designed.
+>
+> -   All the instructions in document are from Vanilla FreeRTOS and only able to apply on Vanilla FreeRTOS.
+> -   ESP-IDF, although based on FreeRTOS, has heavily modified it to support dual-core. And developers are not able to config its scheduling algorithm.
