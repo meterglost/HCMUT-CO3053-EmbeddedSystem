@@ -44,3 +44,9 @@ Check [contributing guides](CONTRIBUTING.md) for more details.
 -   FreeRTOS software timer
 -   Software timer types, states, and behaviors
 -   Write a sample program using 2 software timers sharing 1 callback function
+
+## [Lab 6](lab6)
+
+-   ESP32 WiFi feature
+-   ESP event handling, WiFi operation modes, and WiFi events
+-   Write a sample program to run ESP32 as access point, station, or both

@@ -20,6 +20,10 @@
 			"name": "Lab 5",
 			"path": "../lab5/"
 		},
+		{
+			"name": "Lab 6",
+			"path": "../lab6/"
+		},
 	],
 
 	"settings": {
