@@ -7,3 +7,9 @@ Practice embedded system programming with ESP32-WROOM-32 and ESP-IDF framework
 -   [Documentation](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html)
 
 Check [contributing guides](CONTRIBUTING.md) for more details.
+
+## [Lab 1](lab1)
+
+-   Introduction to ESP32, FreeRTOS, and ESP-IDF
+-   Setup toolchain and dev environment
+-   Build and flash given sample code

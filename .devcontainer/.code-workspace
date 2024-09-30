@@ -1,5 +1,9 @@
 {
 	"folders": [
+		{
+			"name": "Lab 1",
+			"path": "../lab1/"
+		},
 	],
 
 	"settings": {
