@@ -19,7 +19,7 @@ void vTimerCallback(TimerHandle_t xTimer)
 
 	if (timerData->counter > 0)
 	{
-		printf("%4ld: %s %2d\n", xTimeNow, timerData->text, timerData->counter);
+		printf("%4u: %s %2u\n", xTimeNow, timerData->text, timerData->counter);
 		timerData->counter--;
 	}
 

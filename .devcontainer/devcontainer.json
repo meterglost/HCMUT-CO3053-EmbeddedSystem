@@ -30,7 +30,6 @@
 				},
 
 				"C_Cpp.intelliSenseEngine": "disabled",
-				"C_Cpp.default.compilerPath": "${containerEnv:GCC_PATH}",
 
 				"prettier.requireConfig": true,
 

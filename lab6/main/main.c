@@ -109,7 +109,7 @@ void init_wifi()
 
 #if WIFI_ST_IS_CONFIGURED
 
-	[[maybe_unused]] esp_netif_t *netif_st = esp_netif_create_default_wifi_sta();
+	__unused esp_netif_t *netif_st = esp_netif_create_default_wifi_sta();
 
 	wifi_config_t wifi_st_config = {
 		.sta = {
@@ -122,7 +122,7 @@ void init_wifi()
 
 #if WIFI_AP_IS_CONFIGURED
 
-	[[maybe_unused]] esp_netif_t *netif_ap = esp_netif_create_default_wifi_ap();
+	__unused esp_netif_t *netif_ap = esp_netif_create_default_wifi_ap();
 
 	wifi_config_t wifi_ap_config = {
 		.ap = {

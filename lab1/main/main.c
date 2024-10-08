@@ -21,10 +21,10 @@ void app_main(void)
 	esp_chip_info_t chip_info;
 	esp_chip_info(&chip_info);
 
-	unsigned major_rev = chip_info.revision / 100;
-	unsigned minor_rev = chip_info.revision % 100;
+	unsigned int major_rev = chip_info.revision / 100;
+	unsigned int minor_rev = chip_info.revision % 100;
 
-	printf("This is %s chip with %d CPU core(s), silicon revision v%d.%d\n", CONFIG_IDF_TARGET, chip_info.cores, major_rev, minor_rev);
+	printf("This is %s chip with %u CPU core(s), silicon revision v%u.%u\n", CONFIG_IDF_TARGET, chip_info.cores, major_rev, minor_rev);
 
 	if (chip_info.features & CHIP_FEATURE_WIFI_BGN)
 		printf("    - 2.4GHz WiFi\n");
@@ -37,12 +37,14 @@ void app_main(void)
 	if (chip_info.features & CHIP_FEATURE_IEEE802154)
 		printf("    - IEEE 802.15.4 (Zigbee/Thread)\n");
 
-	uint32_t flash_size;
+	unsigned int flash_size;
 	if (esp_flash_get_physical_size(NULL, &flash_size) == ESP_OK)
+	{
 		if (chip_info.features & CHIP_FEATURE_EMB_FLASH)
-			printf("    - %lu Embedded Flash\n", flash_size / (uint32_t)(1024 * 1024));
+			printf("    - %u Embedded Flash\n", flash_size / (unsigned int)(1024 * 1024));
 		else
-			printf("    - %lu External Flash\n", flash_size / (uint32_t)(1024 * 1024));
+			printf("    - %u External Flash\n", flash_size / (unsigned int)(1024 * 1024));
+	}
 
 	for (int i = 10; i > 0; i--)
 	{

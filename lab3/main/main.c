@@ -15,12 +15,12 @@ void vSampleTask()
 
 void vTaskMont(void *pvParameters)
 {
-	uint32_t *counter = (uint32_t *)pvParameters;
+	unsigned int *counter = (unsigned int *)pvParameters;
 
 	for (int times = 20; times > 0; --times)
 	{
 		TickType_t ticks = xTaskGetTickCount();
-		printf("| %20ld | %20ld | %20ld |\n", ticks - 1, counter[0], counter[1]);
+		printf("| %20u | %20u | %20u |\n", ticks - 1, counter[0], counter[1]);
 		vTaskDelay(pdMS_TO_TICKS(1000));
 	}
 
@@ -53,7 +53,7 @@ void vTaskCont(void *pvParameters)
 
 void app_main(void)
 {
-	uint32_t counter[2] = { 0, 0 };
+	unsigned int counter[2] = { 0, 0 };
 
 	TaskHandle_t taskMont = NULL, taskCont = NULL, taskEvnt = NULL;
 

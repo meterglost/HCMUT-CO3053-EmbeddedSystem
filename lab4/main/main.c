@@ -27,7 +27,7 @@ void vTaskReception(void *pvParameters)
 	{
 		Request_t request = { .id = idx, .value = rand_int(1, 9) };
 		if (xQueueSendToBack(xQueueRequest, &request, pdMS_TO_TICKS(100)) == pdPASS)
-			printf("Request %ld is queued: value = %ld\n", request.id, request.value);
+			printf("Request %u is queued: value = %u\n", request.id, request.value);
 		vTaskDelay(pdMS_TO_TICKS(rand_int(100, 300)));
 	}
 
@@ -41,7 +41,7 @@ void vTaskFunctional(void *pvParameters)
 		Request_t request;
 		if (xQueueReceive(xQueueRequest, &request, pdMS_TO_TICKS(100)) == pdPASS)
 		{
-			printf("Request %ld is handled by %s: value = %ld\n", request.id, pcTaskGetName(NULL), request.value);
+			printf("Request %u is handled by %s: value = %u\n", request.id, pcTaskGetName(NULL), request.value);
 			vTaskDelay(pdMS_TO_TICKS(rand_int(700, 900)));
 		}
 	}

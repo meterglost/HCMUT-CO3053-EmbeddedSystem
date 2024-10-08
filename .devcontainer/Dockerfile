@@ -18,6 +18,11 @@ ADD ${IDF_SRC} .
 RUN unzip esp-idf-${IDF_VER}.zip && rm esp-idf-${IDF_VER}.zip && \
     mv esp-idf-${IDF_VER}/* . && rm -rf esp-idf-${IDF_VER}
 
-RUN ./install.sh all && \
-    echo "source ${IDF_DST}/export.sh" >> /etc/profile.d/esp-idf.sh && \
-    echo 'export GCC_PATH=$(which xtensa-esp32-elf-gcc)' >> /etc/profile.d/esp-idf.sh
+RUN /usr/bin/python3 ./tools/idf_tools.py install required esp-clang --targets esp32 && \
+    /usr/bin/python3 ./tools/idf_tools.py install-python-env --features core
+
+RUN /usr/bin/python3 ./tools/idf_tools.py export >> /etc/profile.d/esp-idf-export.sh
+
+ENV IDF_PATH=${IDF_DST}
+ENV IDF_TARGET="esp32"
+ENV IDF_TOOLCHAIN="clang"
